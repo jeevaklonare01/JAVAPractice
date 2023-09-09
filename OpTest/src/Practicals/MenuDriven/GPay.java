@@ -3,6 +3,8 @@ package Practicals.MenuDriven;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class GPay {
     ArrayList<Employee> employees = new ArrayList<>();
     public void createEmployee(){
@@ -20,5 +22,17 @@ public class GPay {
         employees.add(employee);
         System.out.println("New Employee Created : ");
     }
-    
+
+    public void getSalary(int id){
+        for(Employee list : employees){
+            if(list.getEmpid()==id){
+                System.out.println("Employee Name : "+list.getName());
+                System.out.println("Employee Department no : "+list.getDeptno());
+                System.out.println("Employee Salary : "+list.getSalary());
+                exit(0);
+            }
+        }
+        System.out.println("Wrong ID ! ! !");
+    }
 }
+
